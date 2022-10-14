@@ -3,7 +3,7 @@ Copyright 2022 Scott Yannitell
 
 MusicBox 1.0beta
 less than 40K samples required now that rubberband-cli and rubberband the
-ffmpeg filter are equivilant in quality in the latest release of the ffmpeg
+ffmpeg filter are equivalent in quality in the latest release of the ffmpeg
 development version.
 
 Files are better named and organized. I finally have a name for the synthesis
@@ -14,11 +14,11 @@ technique which I call scaled in place recording or SIPR.
 #################################
 
 These were called different things at different stages so the versions here
-do not reflect MusicBox. If you read this you can see the story of my amaturish
+do not reflect MusicBox. If you read this you can see the story of my amateurish
 fight to get the right fidelity out of some of the limitations of having a mere
 13,630 samples for the orchestra. I say "mere" only because the big shot orches-
 tra sample kits like bbc spitfire say they have millions. But how often do these
-kits help produce great melodies, harmonys, and rhythms for real master
+kits help produce great melodies, harmonies, and rhythms for real master
 composers?
 
 Ah hem...
@@ -30,7 +30,7 @@ in quality that what sox was offering with dithering. However, rubberband-cli
 was smooth as silk.
 
 Now it seems ffmpeg has the same library. The issue could be due to the fact
-that I was running version 20.04 of an ubuntu derived os.
+that I was running version 20.04 of an Ubuntu derived OS.
 
 
 So here is the fight:
@@ -41,7 +41,7 @@ I found the final solution to the problems of tuning came from a much more con-
 servitive approach to filling register holes. Instead of simply blasting tons
 of samples out I was selective one what samples were filled. Interestingly, 
 there were a lot of samples that were 'missing' from the get go which I had
-no idea that was the case. But samples that were mislabled I was unable to 
+no idea that was the case. But samples that were mislabeled I was unable to
 correct with out perfect pitch so removing them, and finding another sample to
 shift into position works well enough to sound decent. 
 
@@ -61,7 +61,7 @@ of place and it works well even if you don't have perfect pitch.
 
 1.2.1
 
-Line Tally as of Sept 11 2022 of activly developed scripts:
+Line Tally as of Sept 11 2022 of actively developed scripts:
 135 scale-check.py
 104 Philhartronia-stinkers-addendium-db.py
 270 Philhartronia_sample_preprocessor.py
@@ -84,7 +84,7 @@ on quiet strings by applying a high pass filter to eliminate a wind noise on
 them which prevents accurate timing of the actual bow sound. I also pre trimmed
 the banjo, mandolin, and guitar plucking to pluck right at the start so that
 mysterious lead up noise has been eliminated. So this should greatly improve 
-the timing. These efforts have reduced the unpredictablity of finding sample
+the timing. These efforts have reduced the unpredictability of finding sample
 starts, stops, and lengths for better accuracy.
 
 I've also employed better principles to tempo changes. The tempo changes
@@ -93,7 +93,7 @@ samples sound almost native in clarity. I also processed shifts in a little more
 clever way to preserve maximum fidelity. I found shifting lower notes higher
 sounds better than going lower and higher notes lower as well. So there
 is a sliding scale of how many shifts up or down depending on the location of 
-the orginal samples location within it's register.
+the original samples location within it's register.
 
 I found that audio fidelity in more compressed files are not drastically reduced
 so I've applied further high efficiency compression to them as fdk HE-AAC m4a
@@ -103,28 +103,28 @@ I'm left with over 1.5 million samples. Some of these are never going to be used
 because get_sample.py is smart enough to avoid the ones that sound bad in favor
 of ones that will sound better for the note time required and there are many
 to choose from. So the release version will try to cut down the number of
-these redundant samples (and there are hundreds of thosands of them) to make
-the distibution more economical.
+these redundant samples (and there are hundreds of thousands of them) to make
+the distribution more economical.
 
 As for quality there is not a lot more I can do. I've maxed out what is possible
 with the sample collection I've been given. It is a great collection but it
 is missing some more extreme lengths that would prevent violins from sounding
 sickening sound from over stretching. I've partially solved this by placing 
-a strech limit in get_sample.py. Samples stretched more than about .68 will not 
-be allowed to strech further. This has 2 effects, maintaining quality of the 
+a stretch limit in get_sample.py. Samples stretched more than about .68 will not
+be allowed to stretch further. This has 2 effects, maintaining quality of the
 sound but it can violate the intent of the composer if the note ends too soon.
 
 Mellotrons have a similar limit so it's not like this is a new problem.
 
 The longest violins and strings seem to be limited to About 2.5 seconds before
-they sound bad. Other instruments strech much better and are not much of a 
+they sound bad. Other instruments stretch much better and are not much of a
 problem in that respect due to the infrequent vibrato in them. Rubberband-cli
 is an amazing tool I only wish this level of quality was found in the
 rubberband filter in FFMPEG. If it were, I could get away with no precomputation
 of the samples although, it does save a great deal of processing time for song
 rendering.
 
-It took about 3 weeks since my last youtube demos to get to this point after
+It took about 3 weeks since my last YouTube demos to get to this point after
 dozens of experiments and hundreds of hours of waiting for processing to 
 complete for all of them.
 
@@ -134,9 +134,9 @@ Many of the samples were not correctly labeled for pitch. Others were struck poo
 Fortunately I have 12 pitch-takes for every sample so I won't run out of samples.
 
 1.1.1
-Rerendered all projects and confirmed new improvements. Added 6 romanian folk 
-dances and debussy "the snow is dancing" and "Reverie" to demonstrate violin
-solo capabilitys. 
+Rerendered all projects and confirmed new improvements. Added 6 Romanian folk
+dances and Debussy "the snow is dancing" and "Reverie" to demonstrate violin
+solo capabilities.
 
 1.1.0
 
@@ -154,21 +154,21 @@ Processing time was over 3 days.
 Database process took 24 hours.
 Compressed all samples to mp3 for a reduction of size to 1/12 the original 700gb
 wav size.
-impoved round robin to focus on native sample info instead of the derivitives.
+improved round robin to focus on native sample info instead of the derivatives.
 Polyphony should be better this way.
 
 
 1.0.1
-check 13 THOUSAND samples for correct naming by hand one at a time, 13 THOSAND TIMES. Took all day.
+check 13 THOUSAND samples for correct naming by hand one at a time, 13 THOUSAND TIMES. Took all day.
 clean up scripts
 add proper headers
 rename scripts
 introduce new query system based on sorted lengths and a window to select the closest dynamic amount
 increase the number of stretched samples
-add dithering to stretches (helps with the samples being stretched less than a 1.0 tempo. It was very noticable that the sounds 
+add dithering to stretches (helps with the samples being stretched less than a 1.0 tempo. It was very noticeable that the sounds
 were stretched at 0.5 and 0.375
-With dithering it is almost unnoticible at very low notes like A0-A3
-Higher notes like violins are really noticable. It sounds a little matrixy like in the movie at that speed. 
+With dithering it is almost unnoticeable at very low notes like A0-A3
+Higher notes like violins are really noticeable. It sounds a little matrixy like in the movie at that speed.
 redesigned get_sample.py and the database_builder.py scripts to use a sliding scale for length hunting.
 
 

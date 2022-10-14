@@ -1,6 +1,6 @@
 Get inside the musicbox!
 
-There are a lot of scripts here that will hopefully not be neccessary to deeply change but it would help to know what these scripts do. The build process is explained in the file "6 steps to a building the Philhartronia Synth". That covers what is needed to understand the build process. But since this is scripting, you may never need to know or care.
+There are a lot of scripts here that will hopefully not be necessary to deeply change but it would help to know what these scripts do. The build process is explained in the file "6 steps to a building the Philhartronia Synth". That covers what is needed to understand the build process. But since this is scripting, you may never need to know or care.
 
 In your command line interface (CLI) copy this code and paste it in, press enter.
 
