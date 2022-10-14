@@ -1,0 +1,75 @@
+ 
+#######################
+# Theory of operation #
+#######################
+
+The implimentation of Stretched In Place Recording (SIPR)
+
+Instead of a realtime synthesizer which cannot know ahead of time how long a
+note will be sustained, the MusicBox experiment started with the idea of
+taking a sample and time fitting it to the duration of a midi on to off note
+event. Eventually it will grow far beyond midi. Besides just time fitting the
+notes there isn't much to do except prepare samples and catalog them. The
+script get_sample.py takes a query for a note, with a length, intensity,
+and a few other details, and searchs the db for the closest match. If it can-
+not find one, it will gracefully return a null result which is discarded.
+
+@@ todo: explain settings file
+
+Settings files contain a dictionary list which gets passed to arranger.py.
+Midi is processed in playlist_generator.py and arranger.py recieves it in
+this list format:
+
+[0] midi channel
+[1] midi note
+[2] ontime
+[3] length
+[4] velocity (I sometimes call it intensity but the layman can call it loudness)
+[5] time polyphony ( I wanted to know how many symoltaneous notes are playing)
+
+You can recognize my bad spelling. It's okay.
+
+Based on this information a playlist is generated in arranger.py which
+gets processed as wav recordings from the recorder.py script. There is no
+real time music synthesis. Hence the name musicbox which is the same way.
+
+Why is intensity so important? Well, the Philharmonia sample collection has
+samples for nearly every instrument labled by their notational loudness
+and an acoustic instrument sounds very different timbrally sometimes when
+quiet vrs loud.
+
+I found ffmpeg to be ideal for the task of batch sample time fitting note sam-
+ples to a wav file. It is nice because it is very fast and another thing is
+that it is horizontally and vertically scalable. Meaning, an enterprising
+coder could turn it into a renderfarm accelerated chamber orchestra preview
+accelerator. And it uses as many cores as you want. I have it run 8 threads
+and you could change that to anything you'd like.
+
+The output files contain each instrument separately and the combined mix of
+the ones specified in your settings in the levels you choose. Sox has a very
+decent reverb so settings for that are applied. The reverb of Sox is not the
+best reverb. If you want better reverb, you'll need to make a vst plugin and
+it would be much appreciated if you could find a free vst or some other
+vst like solution that is available as free as in speech software so we may
+be able to use it without restriction. But it's cool for anyone to get the
+right plugin they need. But sadly at this time, I don't have plans to add vst
+plugins or instruments. Whoever does this, I will mail them a very shiny
+penny.
+
+As of writing this for doing simple midi processing to make arrangements all
+you have to do is create a settings file based on a template that I provide
+and you can fill in the parts that have ***** in their places. Just execute
+your settings file and music will be recorded to the project_outputs folder.
+
+The settings file can be very powerful for making arrangements out of classic
+piano works from the great composers of yesteryear. And if you are a pianist
+you can be your own chamber orchestra conductor with MusicBox. There is no
+real micromanaging to do when you know ahead of time how long a violin will
+bow a single note. What would be cool though is if someone could write a
+vst preview plugin for fruity loops, which works on Linux BTW (YAY!!!),
+a pianist can then hear a kind of rough draft while he is playing the music
+in a single midi channel. After the midi file is recorded and the setting
+file already made. The script can be executed to improve the quality hugely.
+Not only that but it can apply note filters to base lines and all sorts of
+cool post processing. If anyone writes this I will mail you a very nice
+shiny penny.

@@ -1,0 +1,73 @@
+MusicBox by Scott Yannitell
+copyright 2022 all rights reserved
+
+There are a few ways to use the toolkit but the easiest way to get fast results
+would be to make a settings file like some of the example projects that
+make a dictionary of settings for the project, instruments, and midi file
+designation. 
+
+A basic project can be built from a template and you can fill in the 
+project name and change the default strings ensemble to something you would
+rather use. At the bottom of the file the settings dictionary is sent to the 
+arranger script which digests and filters the results processed by
+the playlist_generator.py script. Those filtered results are then fed into 
+the arranger.py script to render into tracks and mixed down to a single
+24 bit track containing your music. 
+
+So the process can look like this:
+
+project file > arranger > playlist_generator > arranger > output
+
+But you ordinarly only need to concern yourself with the project file. I only
+illustrate the process if you wish to adapt your own.
+
+Filtering is a lot of fun. It can be easy to construct a baseline by shifting 
+the composition down to a bass instrument's octave, and then simplifying it a
+little by excluding notes shorter than a certain lenght. This can also be 
+applied in the opposite manner for high notes. In this way it can be fun
+and realtively easy to adapt works made for piano by carefully shifting and
+filtering the monophonic composition into various registers and placing limits
+to the lengths of notes played by instruments in each one.
+
+Got a lot of fast notes? Make them plucked.
+
+If all the notes do not seem to be playing, inspect the midi file in something
+like fruity loops and take note of the highest and lowest notes. You can get
+all of your compositions' notes to play by shifting the key value in the settings
+file. The key shift is per semitone, it does not refer to proper key names.
+In this way you could shift it 1 semitone, or 24, whatever shift that is needed
+to maximize the quality of the sound that you wish to make in the music. Some
+instruments sound better near the middle of the range, other sound better near 
+the lower part of it or upper part of it.
+
+Sample selection will be transparent to you as that is negotiated between
+arranger and get_sample, which finds the most ideal sample and 
+makes small tempo adustments for it for the arranger script for 
+correct timing. 
+
+Another method you could employ to make music is to forgo the project file
+and midi_serilizer stages to make your own playlist array. You could make music that
+is based on your own rules following time signatures and scales or chords that
+do not involve midi. You would then have to replace the midi_serilizer to produce
+the playlist list (see midi_serilizer for what that is and it's format) to feed
+to the arranger to make your composition. If you are a programmmer at 
+the same time, a skilled composer, this will open doors to you to write orchestral
+music in the language we all seem to like the most for this, simple python script.
+
+Ok maybe you don't agree, but please give python a look. It is way way easier to
+use than C#, Java, Javascript, bash, and most others I've successfully used.
+Tabs are friendlier than curly braces and semicolons.
+
+Python's array handling methods are first class. I've never seen a language that
+manipulates strings and arrays as well as it python can. And arrays and strings
+are 100% of the music producion process with Scott's Music Box from begining to
+final mix.
+
+Look to the instrument_data_and_scales.py file for tonal relationships and 
+scale primitives and the basic registers each instrument occupies in the 
+orchestra. Get_sample will simply return nothing should a note be asked of it
+that is not found in this register so keep that mind. It won't outright fail,
+but there will be no sounds produced by tubas if you try to play them at some
+redulous octave like C6.
+
+

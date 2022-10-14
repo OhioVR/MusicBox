@@ -1,0 +1,11 @@
+ Scott's MusicBox: Philhartronia Synth
+
+ The Philhartronia synthesizer uses a style of sampling called stretched in place recording. SIPR. Besides the sample preparation stages the main thing to know with stretched in place recording is that there are no attacks, sustains, and delays. The only thing is the sample, and stretching it's time to fit between a note event on a playlist of notes. So far the only impliment that uses this is midi but anyone can write their own playlist generator. You would simply write a project with your own script that makes the playlist then you would feed the playlist to recorder.py to get your music. And there are quite a few cool things you can do with this toolkit. That's mainly it. All the bells and whistles I didn't mention are in their respective comments in the scripts.
+
+Although this toolkit has the philhartronia synth you can also make your own realtime synth with it if have the time and inclination. One thing you could do is become your own conductor and arranger. You could prearrange your music palet with instruments and filters and all that jazz then you can perform a kind of rough draft. It could preview the sound of an orchestra so you could, in real time, conduct your own chamber orchestra.
+
+A brilliant piano performer could use this to compose new orchestations and hear it is rudamentary form before the final 1200 grit finish of the rendered version.
+
+Some brilliant programmer who knows python could grade compositions by difficulty, automatically separate parts for real performers, and then print their parts from pdf products of a new script. Maybe even highlight areas that are hard to play so the composition can be peformed by average music reading musicians.
+
+This is really my dream. I really want to listen to new contemporary music that has deep wells of feeling. I want darkness and light. I want joy and terror. I want to hear what composition sounded like 100 years ago but not that music. I want new music that sounds that good. Since I got my other bases filled I can afford to let this loose on the world.
