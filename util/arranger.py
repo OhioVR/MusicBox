@@ -42,6 +42,7 @@ from util.Philhartronia.instrument_data_and_scales import nuller
 from util.Philhartronia.instrument_data_and_scales import notes
 os.system("mkdir -p diagnostics-logs"+nuller)
 os.system("mkdir -p project_outputs"+nuller)
+os.system("mkdir -p FFMPEG-PROCESS-FOLDER"+nuller)
 def debug(filename,data):
     file1 = open("diagnostics-logs/"+filename, "a")
     file1.write(str(data)+"\n")
