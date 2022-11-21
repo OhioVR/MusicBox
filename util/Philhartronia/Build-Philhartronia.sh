@@ -146,7 +146,7 @@ rm -rf samples/Philharmonia_extended 2>&1 || true
 # crossfade_arco.py
 ./database_builder.py Philharmonia_healed
 
-./crossfade_arco.py
+#./crossfade_arco.py
 
 # the extended samples are really already prefiltered anyway.
 ######./sample-filter.py Philharmonia_extended

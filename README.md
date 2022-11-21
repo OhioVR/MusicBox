@@ -34,3 +34,9 @@ You can turn a treble part into a base line by shifting the score an octave for 
 It is brain dead easy to get realism with musicbox and usually "good enough" to make a backup track if you were a vocalist or if you are an instrumentalist and you want to hear what a part would be like without the trouble of mastering it first (part of the discovery benefit).
 
 
+
+Ok so it isn't as good as I thought. But maybe it would still be fun to play with in realtime with the keyboard-lyre.py script
+
+https://www.youtube.com/watch?v=VPxsbsEu0_s
+
+My next expermiment will be a kind of fundamental music language based on chords, intervals and scales.

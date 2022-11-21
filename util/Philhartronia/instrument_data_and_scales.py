@@ -160,29 +160,174 @@ for i in range(0,12):
 # (more to come)
 # these are intervals
 
-chromatic_progression = [0,1,2,3,4,5,6,7,8,9,10,11]
+chromatic_progression = []
+for i in range(0,12*12):
+    chromatic_progression.append(i)
 
-major_scale = [0]                               # Example C
-major_scale.append(major_scale[-1]+2)           # Example D
-major_scale.append(major_scale[-1]+2)           # Example E
-major_scale.append(major_scale[-1]+1)           # Example F
-major_scale.append(major_scale[-1]+2)           # Example G
-major_scale.append(major_scale[-1]+2)           # Example A
-major_scale.append(major_scale[-1]+2)           # Example B
+major_scale = []
+for i in range(0,12*12):
+    major_scale.append(0+(i*12))                           # Example C
+    major_scale.append(major_scale[-1]+2+(i*12))           # Example D
+    major_scale.append(major_scale[-1]+2+(i*12))           # Example E
+    major_scale.append(major_scale[-1]+1+(i*12))           # Example F
+    major_scale.append(major_scale[-1]+2+(i*12))           # Example G
+    major_scale.append(major_scale[-1]+2+(i*12))           # Example A
+    major_scale.append(major_scale[-1]+2+(i*12))           # Example B
 
-minor_scale = [0]                               # Example C
-minor_scale.append(major_scale[-1]+2)           # Example D
-minor_scale.append(major_scale[-1]+1)           # Example Ds
-minor_scale.append(major_scale[-1]+2)           # Example F
-minor_scale.append(major_scale[-1]+2)           # Example G
-minor_scale.append(major_scale[-1]+1)           # Example Gs
-minor_scale.append(major_scale[-1]+2)           # Example As
+dbl_major_scale = []
+for i in range(0,12*12):
+    dbl_major_scale.append(0+(i*12*2))                             # Example C
+    dbl_major_scale.append(dbl_major_scale[-1]+4+(i*12))           # Example E
+    dbl_major_scale.append(dbl_major_scale[-1]+4+(i*12))           # Example Gs
+    dbl_major_scale.append(dbl_major_scale[-1]+2+(i*12))           # Example As
+    dbl_major_scale.append(dbl_major_scale[-1]+4+(i*12))           # Example D
+    dbl_major_scale.append(dbl_major_scale[-1]+4+(i*12))           # Example Fs
+    dbl_major_scale.append(dbl_major_scale[-1]+4+(i*12))           # Example As
 
-pentatonic_scale = [0]                          # Example C     
-pentatonic_scale.append(pentatonic_scale[-1]+2) # Example D
-pentatonic_scale.append(pentatonic_scale[-1]+3) # Example E
-pentatonic_scale.append(pentatonic_scale[-1]+2) # Example Fs
-pentatonic_scale.append(pentatonic_scale[-1]+2) # Example Gs
+minor_scale = []
+for i in range(0,12*12):
+    minor_scale.append(0+(i*12))                           # Example C
+    minor_scale.append(minor_scale[-1]+2+(i*12))           # Example D
+    minor_scale.append(minor_scale[-1]+1+(i*12))           # Example Ds
+    minor_scale.append(minor_scale[-1]+2+(i*12))           # Example F
+    minor_scale.append(minor_scale[-1]+2+(i*12))           # Example G
+    minor_scale.append(minor_scale[-1]+1+(i*12))           # Example Gs
+    minor_scale.append(minor_scale[-1]+2+(i*12))           # Example As
+
+dbl_minor_scale = []
+for i in range(0,12*12):
+    dbl_minor_scale.append(0+(i*12*2))                     # Example C
+    dbl_minor_scale.append(dbl_minor_scale[-1]+4+(i*12))           # Example E
+    dbl_minor_scale.append(dbl_minor_scale[-1]+2+(i*12))           # Example Fs
+    dbl_minor_scale.append(dbl_minor_scale[-1]+4+(i*12))           # Example As
+    dbl_minor_scale.append(dbl_minor_scale[-1]+4+(i*12))           # Example D
+    dbl_minor_scale.append(dbl_minor_scale[-1]+2+(i*12))           # Example Gs
+
+
+pentatonic_scale = []
+for i in range(0,12*12):
+    pentatonic_scale.append(0+(i*12))               # Example C     
+    pentatonic_scale.append(pentatonic_scale[-1]+2) # Example D
+    pentatonic_scale.append(pentatonic_scale[-1]+3) # Example E
+    pentatonic_scale.append(pentatonic_scale[-1]+2) # Example Fs
+    pentatonic_scale.append(pentatonic_scale[-1]+2) # Example Gs
+
+whole_tone_scale = []
+for i in range(0,12*12*7):
+    whole_tone_scale.append(0+(i*12))               # Example C     
+    whole_tone_scale.append(whole_tone_scale[-1]+2) # Example D
+    whole_tone_scale.append(whole_tone_scale[-1]+2) # Example E
+    whole_tone_scale.append(whole_tone_scale[-1]+2) # Example Fs
+    whole_tone_scale.append(whole_tone_scale[-1]+2) # Example Gs
+    whole_tone_scale.append(whole_tone_scale[-1]+2) # Example As
+
+double_tone_scale = []
+for i in range(0,12*12*7):
+    double_tone_scale.append(0+(i*12))               # Example C     
+    double_tone_scale.append(double_tone_scale[-1]+4) # Example E
+    double_tone_scale.append(double_tone_scale[-1]+4) # Example Gs
+
+
+major_1 = []
+for i in range(0,12*12):
+    major_1.append(0+(i*12))
+    major_1.append(major_1[-1]+4)
+    major_1.append(major_1[-1]+3)
+
+major_1_7 = []
+for i in range(0,12*12):
+    major_1_7.append(0+(i*12))
+    major_1_7.append(major_1_7[-1]+4)
+    major_1_7.append(major_1_7[-1]+3)
+    major_1_7.append(major_1_7[-1]+4)
+
+major_2 = []
+for i in range(0,12*12):
+    major_2.append(5+(i*12))
+    major_2.append(major_2[-1]+4)
+    major_2.append(major_2[-1]+3)
+
+major_2_7 = []
+for i in range(0,12*12):
+    major_2_7.append(5+(i*12))
+    major_2_7.append(major_2_7[-1]+4)
+    major_2_7.append(major_2_7[-1]+3)
+    major_2_7.append(major_2_7[-1]+4)
+
+
+major_3 = []
+for i in range(0,12*12):
+    major_3.append(7+(i*12))
+    major_3.append(major_3[-1]+4)
+    major_3.append(major_3[-1]+3)
+
+major_3_7 = []
+for i in range(0,12*12):
+    major_3_7.append(7+(i*12))
+    major_3_7.append(major_3_7[-1]+4)
+    major_3_7.append(major_3_7[-1]+3)
+    major_3_7.append(major_3_7[-1]+4)
+
+
+
+minor_1 = []
+for i in range(0,12*12):
+   minor_1.append(2+(i*12))
+   minor_1.append(minor_1[-1]+3)
+   minor_1.append(minor_1[-1]+4)
+
+minor_1_7 = []
+for i in range(0,12*12):
+   minor_1_7.append(2+(i*12))
+   minor_1_7.append(minor_1_7[-1]+3)
+   minor_1_7.append(minor_1_7[-1]+4)
+   minor_1_7.append(minor_1_7[-1]+3)
+
+
+minor_2 = []
+for i in range(0,12*12):
+   minor_2.append(4+(i*12))
+   minor_2.append(minor_2[-1]+3)
+   minor_2.append(minor_2[-1]+4)
+
+minor_2_7 = []
+for i in range(0,12*12):
+   minor_2_7.append(4+(i*12))
+   minor_2_7.append(minor_2_7[-1]+3)
+   minor_2_7.append(minor_2_7[-1]+4)
+   minor_2_7.append(minor_2_7[-1]+3)
+
+minor_3 = []
+for i in range(0,12*12):
+   minor_3.append(9+(i*12))
+   minor_3.append(minor_3[-1]+3)
+   minor_3.append(minor_3[-1]+4)
+
+minor_3_7 = []
+for i in range(0,12*12):
+   minor_3_7.append(9+(i*12))
+   minor_3_7.append(minor_3_7[-1]+3)
+   minor_3_7.append(minor_3_7[-1]+4)
+   minor_3_7.append(minor_3_7[-1]+3)
+
+diminished= []
+for i in range(0,12*12):
+   diminished.append(-1+(i*12))
+   diminished.append(diminished[-1]+3)
+   diminished.append(diminished[-1]+3)
+
+minor_7_flat_5= []
+for i in range(0,12*12):
+   minor_7_flat_5.append(-1+(i*12))
+   minor_7_flat_5.append(minor_7_flat_5[-1]+3)
+   minor_7_flat_5.append(minor_7_flat_5[-1]+3)
+   minor_7_flat_5.append(minor_7_flat_5[-1]+4)
+
+
+
+
+
+
 
 # https://www.youtube.com/watch?v=nK2jYk37Rlg
 # [equal temperment]

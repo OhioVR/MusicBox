@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/diagnostics-logs/*
+/FFMPEG-PROCESS-FOLDER/*
+/project_outputs/*
+/util/Philhartronia/samples/*
+/util/Philhartronia/bin/*

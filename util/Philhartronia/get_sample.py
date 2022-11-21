@@ -83,10 +83,9 @@ def get_sample(note_index, instrument, target_midi_loud, target_length, settings
 
     if instrument == "mandolin":
         mode = "pizz-normal"
-    if instrument == "mandolin" and target_length >= settings[instrument_designation]["pizz_threshold"]:
-        mode = "tremolo"
-
-    #print("mode", mode)
+    if instrument == "mandolin":
+        if target_length <= settings[instrument_designation]["pizz_threshold"]:
+            mode = "tremolo"
 
     try:
         special_mode = settings[instrument_designation]["special_mode_name"]
@@ -112,10 +111,7 @@ def get_sample(note_index, instrument, target_midi_loud, target_length, settings
     prime_index = None
     for search_index in range(0, len(samples)):
         sample  = samples[search_index][KEYS.SAMPLE]
-        # find purely un changed tempo files
-        # reason being if there is any pitch variation, speeding or slowing
-        # makes it sound uglier than if you don't do that as much.
-        #if "t1.0-" not in sample: continue
+
 
         length    = samples[search_index][KEYS.NOTE_LENGTH]
         intensity = samples[search_index][KEYS.LOUDNESS_ID]
@@ -181,7 +177,8 @@ def get_sample(note_index, instrument, target_midi_loud, target_length, settings
                 prime_index = best_index
                 print(samples[search_index])
         elif mode == "pizz-normal" or instrument == "guitar" or instrument == "banjo":
-            if instrument == "mandolin" and "tremolo" in sample: continue
+            if instrument == "mandolin" and "tremolo" in sample: 
+                continue
             if final_score <= best_score:
                 best_score  = final_score
                 best_index = search_index
